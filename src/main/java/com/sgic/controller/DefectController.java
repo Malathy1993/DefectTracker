@@ -41,7 +41,7 @@ public class DefectController {
 
 
 	@DeleteMapping("/project/{projectId}/defects/{defectsId}")
-	public ResponseEntity<?> deleteComment(@PathVariable(value = "projectId") Long projectId,
+	public ResponseEntity<?> deleteDefect(@PathVariable(value = "projectId") Long projectId,
 			@PathVariable(value = "defectsId") Long defectsId) {
 		return defectRepostories.findByIdAndProjectId(defectsId, projectId).map(defects -> {
 			defectRepostories.delete(defects);
